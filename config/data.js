@@ -22,7 +22,7 @@ export const advices = [
     image: require('./../assets/hands.png'),
   },
   {
-    content: 'Social Distancing',
+    content: 'Menjaga Jarak',
     image: require('./../assets/social1.png'),
   },
   {

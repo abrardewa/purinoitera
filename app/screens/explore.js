@@ -47,26 +47,26 @@ export default function ExploreScreen({ navigation }) {
               marginBottom: SPACING * 0.5,
             }}
           >
-            COVID‑19
+            Covid‑19
           </Text>
           <Text style={{ color: 'white', maxWidth: width * 0.5 }}>
-            Proteksi Diri Anda Dengan 3 M
+            Proteksi Diri Anda dengan 3M
           </Text>
         </View>
 
         <View style={{ padding: SPACING, paddingBottom: 0 }}>
           <Text style={{ fontWeight: 'bold', fontSize: H2 }}>
-            Mengalami gejala COVID‑19 ?
+            Mengalami gejala Covid‑19 ?
           </Text>
           <Text>
-            Jika mengalami gejala paparan COVID-19 hubungi satgas Covid kota Bandar Lampung dengan menekan tombol di bawah.
+            Jika mengalami gejala paparan Covid-19 hubungi satgas Covid Kota Bandar Lampung dengan menekan tombol di bawah.
           </Text>
           <TouchableOpacity onPress={() => Linking.openURL(`tel:0721252741`)}>
             <View style={styles.btn}>
               <Text
                 style={{ color: 'white', fontSize: 16, fontWeight: 'bold' }}
               >
-                Call Now
+                Hubungi Sekarang
               </Text>
             </View>
           </TouchableOpacity>
@@ -98,7 +98,7 @@ export default function ExploreScreen({ navigation }) {
         />
 
         <Text style={{ fontSize: H2, fontWeight: 'bold', margin: SPACING }}>
-          Gejala Terpapar COVID-19
+          Gejala Terpapar Covid-19
         </Text>
 
         <Animated.FlatList

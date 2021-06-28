@@ -97,7 +97,7 @@ export default function HomeScreen({ navigation }) {
               marginBottom: SPACING,
             }}
           >
-            Selamat Datang Di Aplikasi Covid Itera
+            Selamat Datang Di Aplikasi Covid-19 Kota Bandar Lampung
           </Text>
         </View>
         <AnalyticsCard global={global} />

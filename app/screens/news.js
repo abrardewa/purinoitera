@@ -62,7 +62,7 @@ export default function NewsScreen({ navigation }) {
   function getArticles(selectedPage) {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?category=${categories[category]}&country=us&page=${selectedPage}&pageSize=${itemsPerPage}&apiKey=c7f6dc8449b9443590d4f383aabb514b`
+        `https://newsapi.org/v2/top-headlines?category=${categories[category]}&country=id&page=${selectedPage}&pageSize=${itemsPerPage}&apiKey=c7f6dc8449b9443590d4f383aabb514b`
       )
       .then((res) => {
         setPage(selectedPage + 1);
