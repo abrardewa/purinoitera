@@ -58,7 +58,7 @@ export default function HomeScreen({ navigation }) {
   function InitializePage() {
     axios.get(casesApi).then((res) => {
       setCases(
-        res.data.data.sort((a, b) => -a.confirmed + b.confirmed).slice(0, 40)
+        res.data.sort((a, b) => -a.confirmed + b.confirmed).slice(0, 126)
       );
     });
     axios.get(statisticsApi).then((res) => {
@@ -106,7 +106,9 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.title}>Kasus Terkonfirmasi</Text>
           <Text style={styles.subTitle}>{new Date().toDateString()}</Text>
         </View>
-
+            <SearchInput>
+              
+            </SearchInput>
         <View style={styles.confirmedCasesContainer}>
           {cases.length == 0
             ? new Array(2)
@@ -290,10 +292,10 @@ function AnalyticsCard({ global }) {
       </View>
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Status Zona</Text>
-        {/* <Text style={{ color: 'green', fontWeight: 'bold' }}>
-          {global?.confirmed}   
+        <Text style={{ color: 'green', fontWeight: 'bold' }}>
+          {global?.active}   
           
-        </Text> */}
+        </Text>
       </View>
     </View>
     
@@ -358,10 +360,11 @@ const styles = StyleSheet.create({
   searchContainer: {
     marginVertical: SPACING,
     width,
+    paddingHorizontal: SPACING*1,
   },
   searchInput: {
     width: width - SPACING * 2,
-    paddingHorizontal: SPACING,
+    paddingHorizontal: SPACING*1,
 
     backgroundColor: 'white',
     height: 60,
