@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './app/screens/home';
 import ExploreScreen from './app/screens/explore';
 import NewsScreen from './app/screens/news';
+import HelpScreen from './app/screens/help';
 import BottomNavigation from './app/ui-components/bottom_navigation';
 import { Directions } from 'react-native-gesture-handler';
 
@@ -29,6 +30,7 @@ export default function App({ navigation }) {
         />
         <Tabs.Screen name="explore" component={ExploreScreen} />
         <Tabs.Screen name="news" component={NewsScreen} />
+        <Tabs.Screen name="help" component={HelpScreen} />
       </Tabs.Navigator>
     </NavigationContainer>
   );

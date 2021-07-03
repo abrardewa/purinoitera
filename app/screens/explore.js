@@ -50,7 +50,7 @@ export default function ExploreScreen({ navigation }) {
             Covid‑19
           </Text>
           <Text style={{ color: 'white', maxWidth: width * 0.5 }}>
-            Proteksi Diri Anda dengan 3M
+            Proteksi Diri Anda dengan 5M
           </Text>
         </View>
 

@@ -2,7 +2,12 @@ export const pages = [
   {
     name: 'analycis',
     route: 'home',
-    iconName: 'pie-chart-outline',
+    iconName: 'home-outline',
+  },
+  {
+    name: 'Help',
+    route: 'help',
+    iconName: 'bar-chart-outline',
   },
   {
     name: 'Explore',
@@ -14,6 +19,7 @@ export const pages = [
     route: 'news',
     iconName: 'newspaper-outline',
   },
+  
 ];
 
 export const advices = [
@@ -29,7 +35,14 @@ export const advices = [
     content: 'Menggunakan Masker',
     image: require('./../assets/mask.png'),
   },
-  
+  {
+    content: 'Menjauhi Kerumunan',
+    image: require('./../assets/kerumunan.png'),
+  },
+  {
+    content: 'Mengurangi Mobilitas',
+    image: require('./../assets/mobilitas.png'),
+  },
 ];
 
 export const symptoms = [
