@@ -32,8 +32,9 @@ import Spacer from '../components/spacer';
 const axios = require('axios').default;
 export default function HomeScreen({ navigation }) {
   const [cases, setCases] = React.useState([]);
-  const [global, setGlobal] = React.useState(null);
+  const [global, setGlobal] = React.useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
+  // const [setData, setDatas] = React.useState(null);
   const [selectedCountry, setSelectedCountry] = React.useState(null);
   const [modalVisibility, setModelVisibility] = React.useState(false);
 
@@ -45,6 +46,9 @@ export default function HomeScreen({ navigation }) {
     setModelVisibility(true);
     setSelectedCountry(country);
   }
+  // function openHead(country) {
+  //   setDatas(country);
+  // }
   function closeModel() {
     setModelVisibility(false);
   }
@@ -63,7 +67,7 @@ export default function HomeScreen({ navigation }) {
     });
     axios.get(statisticsApi).then((res) => {
       setIsRefreshing(false);
-      setGlobal(res.data.data);
+      setGlobal(res.data);
     });
   }
 
@@ -100,7 +104,14 @@ export default function HomeScreen({ navigation }) {
             Selamat Datang Di Aplikasi Lindungi Itera
           </Text>
         </View>
-        <AnalyticsCard global={global} />
+        {global.map((item, index) => (
+            <AnalyticsCard
+            item={item}
+            key={'country' + index}
+            // gas={openHead}
+              
+            />
+          ))}
 
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Kasus Terkonfirmasi</Text>
@@ -262,7 +273,7 @@ function CountryCard({ item, onPress }) {
   );
 }
 
-function AnalyticsCard({ global }) {
+function AnalyticsCard({ item }) {
   return (
     <View style={styles.analyticsCard}>
       <Text
@@ -276,24 +287,24 @@ function AnalyticsCard({ global }) {
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Total Konfirmasi</Text>
         <Text style={{ color: 'green', fontWeight: 'bold' }}>
-          {global?.confirmed}   
+          {item.confirmed}   
           {/* cari sumbernya */}
         </Text>
       </View>
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Total Meninggal</Text>
         <Text style={{ color: 'red', fontWeight: 'bold' }}>
-          {global?.deaths}
+          {item.deaths}
         </Text>
       </View>
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Total Sembuh</Text>
-        <Text>{global?.recovered}</Text>
+        <Text>{item.recovered}</Text>
       </View>
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Status Zona</Text>
         <Text style={{ color: 'green', fontWeight: 'bold' }}>
-          {global?.active}   
+          {item.active}   
           
         </Text>
       </View>
