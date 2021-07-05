@@ -16,6 +16,7 @@ import { Feather } from '@expo/vector-icons';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import TouchableScale from 'react-native-touchable-scale';
 
+
 import {
   Colors,
   H1,
@@ -117,9 +118,6 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.title}>Kasus Terkonfirmasi</Text>
           <Text style={styles.subTitle}>{new Date().toDateString()}</Text>
         </View>
-            <SearchInput>
-              
-            </SearchInput>
         <View style={styles.confirmedCasesContainer}>
           {cases.length == 0
             ? new Array(2)
@@ -212,8 +210,20 @@ function CountryDetailsModal({ country, closeModel }) {
             <Text style={styles.subTitle}>{country.deaths}</Text>
           </View>
           <View style={styles.analyticsCardItems}>
+            <Text>Vaksin Tahap 1</Text>
+            <Text style={styles.subTitle}>{country.vpertama}</Text>
+          </View>
+          <View style={styles.analyticsCardItems}>
+            <Text>Vaksin Tahap 2</Text>
+            <Text style={styles.subTitle}>{country.vkedua}</Text>
+          </View>
+          <View style={styles.analyticsCardItems}>
             <Text>Zona</Text>
             {/* <Text style={styles.subTitle}>{country.active}</Text> */}
+            {country.active == 0 ? <Text  style={{ color: 'red', fontWeight: 'bold' }}>Merah</Text>: null }
+            {country.active == 1 ? <Text  style={{ color:Colors.orange, fontWeight: 'bold' }}>Oranye</Text>: null }
+            {country.active == 2 ? <Text  style={{ color: 'yellow', fontWeight: 'bold' }}>Kuning</Text>: null }
+            {country.active == 3 ? <Text  style={{ color: 'green', fontWeight: 'bold' }}>Hijau</Text>: null }
           </View>
         </Animated.View>
       </TouchableOpacity>
@@ -304,7 +314,10 @@ function AnalyticsCard({ item }) {
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Status Zona</Text>
         <Text style={{ color: 'green', fontWeight: 'bold' }}>
-          {item.active}   
+          {item.active == 0 ? <Text  style={{ color: 'red', fontWeight: 'bold' }}>Merah</Text>: null }
+          {item.active == 1 ? <Text  style={{ color:Colors.orange, fontWeight: 'bold' }}>Oranye</Text>: null }
+          {item.active == 2 ? <Text  style={{ color: 'yellow', fontWeight: 'bold' }}>Kuning</Text>: null }
+          {item.active == 3 ? <Text  style={{ color: 'green', fontWeight: 'bold' }}>Hijau</Text>: null }
           
         </Text>
       </View>

@@ -15,6 +15,7 @@ class Colors {
   static dark = '#3C3C3C';
   static green = '#5AC7AA';
   static lightGrey = '#ddd';
+  static orange='#ffa500';
 }
 
 export { Colors, SPACING, H1, H2, SPAN, width, height, H3 };

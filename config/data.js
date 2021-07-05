@@ -5,6 +5,11 @@ export const pages = [
     iconName: 'home-outline',
   },
   {
+    name: 'search',
+    route: 'search',
+    iconName: 'search-outline',
+  },
+  {
     name: 'Help',
     route: 'help',
     iconName: 'bar-chart-outline',
