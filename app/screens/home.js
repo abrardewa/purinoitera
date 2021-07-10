@@ -292,7 +292,7 @@ function AnalyticsCard({ item }) {
           { fontSize: H2, color: Colors.dark, fontWeight: 'bold' },
         ]}
       >
-        Bandar Lampung
+        Bandar Lampung dan Lampung Selatan
       </Text>
       <View style={styles.analyticsCardItems}>
         <Text style={{ color: Colors.darkGrey }}>Total Konfirmasi</Text>
