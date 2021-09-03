@@ -1,13 +1,11 @@
 {
   "expo": {
-    "name": "Covid",
-    "slug": "Covid",
+    "name": "Covid-19 Bandar Lampung",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/screen.png",
-      "resizeMode": "cover"
+      "image": "./assets/screen.png"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,9 +18,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#FFFFFF",
-        "resizeMode": "contain"
       },
-      "package": "com.mostafabenlagha.Covid"
+      "package": "com.Lukmanalhakim.Covid"
     },
     "web": {
       "favicon": "./assets/favicon.png"
